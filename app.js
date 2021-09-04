@@ -53,7 +53,7 @@ const getWeatherOnLocation = async (latitude, longitude) => {
     
         weather.temparature.value = Math.floor(data.main.temp - kelvin)
         weather.temparature.feelsLike = Math.floor(data.main.feels_like - kelvin)
-        weather.windSpeed = data.wind.speed * 3.6
+        weather.windSpeed = (data.wind.speed * 3.6).toFixed(2)
         weather.description = data.weather[0].description
         weather.iconId = data.weather[0].icon
         weather.city = data.name
